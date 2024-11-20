@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8088:8088"
+    restart: always
+  db:
+    container_name: postgres8
+    image: postgres:17.1
+    ports:
+      - "5437:5432"
+    environment:
+      POSTGRES_USER: bauser
+      POSTGRES_DB: badb
+      POSTGRES_PASSWORD: 1122
